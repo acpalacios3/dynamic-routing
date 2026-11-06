@@ -3,16 +3,20 @@ import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
 
-    const { isAuthenticated, login, logout} = useContext(AuthContext);
-      
+    const { isAuthenticated, login, logout } = useContext(AuthContext);
+
     return (
         <div>
+            <p>from login Page</p>
+            <button
+                className="auth-button"
+                onClick={isAuthenticated ? logout : login}
+            >
 
-            <button 
-                 onClick={isAuthenticated ? logout:login}>
-                {isAuthenticated ? logout:login}
+                {isAuthenticated ? "logout" : "login"}
+
             </button>
-           
+
         </div>
     );
 }

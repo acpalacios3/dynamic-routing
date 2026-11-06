@@ -5,14 +5,14 @@ export default function BlogPost() {
 
     // access the slug to get specific data for that post
     const { slug } = useParams();
-    
+
     // console.log(slug);
 
     const itemSelect = post.find(
-       (item) => item.slug === slug
+        (item) => item.slug === slug
     );
 
-    if (!itemSelect){
+    if (!itemSelect) {
         return <h2> Post not found </h2>
     }
 

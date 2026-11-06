@@ -14,18 +14,18 @@ export function AuthProvider({ children }) {
 
     // authentication status
     const [isAuthenticated, setisAuthenticated] = useState(false);
-    
+
     // login function
-    const login=() =>{
-      setisAuthenticated(true);
+    const login = () => {
+        setisAuthenticated(true);
     }
     // logout function
-     const logout=() =>{
-      setisAuthenticated(false);
+    const logout = () => {
+        setisAuthenticated(false);
     }
 
     return (
-        <AuthContext.Provider value={{isAuthenticated, login, logout}}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
