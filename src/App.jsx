@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
-import BlogPages from './pages/BlogPages'
+import Blog from './pages/Blog'
 
 export default function App(){
 
 return(
-<div>
-         <BlogPages/>
+<Routes>
+        
+
+         <Route path='/blog' element= {<Blog/>}/>
        
 
-</div>
+</Routes>
 
 )
 

@@ -1,20 +1,32 @@
 import {post} from "../lib/post";
+import {Link} from "react-router-dom"
 
 
-function BlogPages() {
+function Blog() {
   return (
     <>
-      {post.map((item) => (
-        <div key={item.id}>
-          <h2>{item.title}</h2>
-          <p>{item.slug}</p>
+      <p>My Blog</p>
+      {post.map((postItem) => (
+        <div key={postItem.id}>
+
+          {/* <h2>{postItem.title}</h2> */}
+
+          <h2>
+            <link to = {`/blog/${postItem.slug}`} />
+            {postItem.title}
+            <link/>
+
+          </h2>
+          
+          <p>{postItem.slug}</p>
+        
         </div>
       ))}
     </>
   );
 }
 
-export default BlogPages;
+export default Blog;
 
 
 
