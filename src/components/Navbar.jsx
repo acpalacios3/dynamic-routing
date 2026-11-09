@@ -1,11 +1,11 @@
-import Login from "../pages/Login";
+// import Login from "../pages/Login";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 export default function Navbar() {
 
-    const { isAuthenticated, login, logout } = useContext(AuthContext);
+    const { isAuthenticated, logout } = useContext(AuthContext);
 
     return (
         <nav className="navbar">
@@ -14,6 +14,8 @@ export default function Navbar() {
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
 
+            {/* Use the context to: If the user is authenticated, display the "Admin link" and "Log Out" button,
+            otherwise, display the "Log In" link */}
             {isAuthenticated ? (
                 <>
                     <Link to="/admin">Admin</Link>
@@ -21,9 +23,9 @@ export default function Navbar() {
                         Log Out
                     </button>
                 </>
-            ) : (
-                <Link to="/login">Log In</Link>
-            )}
+            ) : (<Link to="/login">Log In</Link>)
+            
+            }
 
         </nav>
 

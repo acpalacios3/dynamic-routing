@@ -8,12 +8,17 @@ export default function Login() {
     return (
         <div>
             <p>from login Page</p>
+
+            {/* Login Page (/login):
+            A simple page with a “Log In” button that calls the login() function from the context. */}
             <button
                 className="auth-button"
-                onClick={isAuthenticated ? logout : login}
+                // onClick={isAuthenticated ? logout : login}
+                onClick={login}
             >
+                {/* {isAuthenticated ? "logout" : "login"} */}
 
-                {isAuthenticated ? "logout" : "login"}
+                Log in
 
             </button>
 

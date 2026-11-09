@@ -7,11 +7,12 @@ export default function BlogPost() {
     const { slug } = useParams();
 
     // console.log(slug);
-
+    //  find() goes through the array and returns the first blog that matches the slug.
     const itemSelect = post.find(
         (item) => item.slug === slug
     );
-
+    
+    // if it doesn't find the blog, it shows a message
     if (!itemSelect) {
         return <h2> Post not found </h2>
     }

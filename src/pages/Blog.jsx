@@ -12,9 +12,10 @@ function Blog() {
           {/* <h2>{postItem.title}</h2> */}
 
           <h2>
-            <link to = {`/blog/${postItem.slug}`} />
+            {/* create a navigation link and get the current blog slug */}
+            <Link to = {`/blog/${postItem.slug}`} />
             {postItem.title}
-            <link/>
+            <Link/>
 
           </h2>
           
