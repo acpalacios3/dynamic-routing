@@ -1,25 +1,31 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
 
-    const { isAuthenticated, login, logout } = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
+    
+    // "navigate" is a function that will allow us to change the path
+    // kind of like the "to" prop in the Link component
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+          login();
+          navigate("/admin");
+    };
 
     return (
         <div>
-            <p>from login Page</p>
+            <p>Login Page</p>
 
             {/* Login Page (/login):
             A simple page with a “Log In” button that calls the login() function from the context. */}
             <button
                 className="auth-button"
-                // onClick={isAuthenticated ? logout : login}
-                onClick={login}
+                onClick={handleLogin}
             >
-                {/* {isAuthenticated ? "logout" : "login"} */}
-
                 Log in
-
             </button>
 
         </div>
