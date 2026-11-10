@@ -4,10 +4,12 @@ import {Link} from "react-router-dom"
 
 function Blog() {
   return (
-    <>
-      <p>My Blog</p>
+    <div className="blog-container">
+      <h1>My Blog</h1>
       {post.map((postItem) => (
-        <div key={postItem.id}>
+        <article key={postItem.id}
+             className="blog-item"
+        >
 
           {/* <h2>{postItem.title}</h2> */}
 
@@ -21,9 +23,9 @@ function Blog() {
           
           <p>{postItem.slug}</p>
         
-        </div>
+        </article>
       ))}
-    </>
+    </div>
   );
 }
 

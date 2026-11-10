@@ -8,6 +8,7 @@ import BlogPost from './pages/BlogPost'
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
+import Home from './pages/Home'
 
 
 export default function App(){
@@ -19,8 +20,12 @@ export default function App(){
         <>
             <Navbar />
             <Routes>
-
-                <Route path='/blog' element={<Blog />} />
+                <Route path="/" element={<Home />} />
+                <Route path='/blog' element={
+                    <div className='page-content'>
+                    <Blog />
+                    </div>
+                    } />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/login" element={<Login />} />
                   {/* Protected Admin Route */}

@@ -21,3 +21,51 @@
     padding: 8px 18px;
     cursor: pointer;
 }
+
+.blog-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.blog-container h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.blog-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-item a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.blog-item a:hover {
+    text-decoration: underline;
+}
+
+/* .page-content {
+    animation: fadeIn 0.5s ease-in;
+} */
+
+/* opacity: 0: starts invisible.
+opacity: 1: ends visible.
+2s: animation duration.
+@keyframes: defines how the appearance changes during the animation. */
+
+.page-content {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
