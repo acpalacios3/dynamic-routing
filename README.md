@@ -77,16 +77,19 @@ Import the routing components:
 
 Example:
 
+```jsx
 <Routes>
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/login" element={<Login />} />
 </Routes>
+```
 
 6. Protected Admin Route
 
 The Admin page is accessible only to authenticated users.
 
+```jsx
 <Route
     path="/admin"
     element={
@@ -95,6 +98,6 @@ The Admin page is accessible only to authenticated users.
             : <Navigate to="/login" replace />
     }
 />
-
+```
 If authenticated, the user sees the Admin Dashboard.
 If not authenticated, the user is redirected to the Login page.
